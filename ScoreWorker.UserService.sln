@@ -5,6 +5,18 @@ VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "src\UserService\UserService.csproj", "{C630D275-68E8-48D5-BBB1-37F5C8AD6FAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.DataProvider.PostgreSql.Ef", "UserService.DataProvider.PostgreSql.Ef\UserService.DataProvider.PostgreSql.Ef.csproj", "{6B0D1442-804D-4C4D-B8F6-C0471DE30247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Data", "UserService.Data\UserService.Data.csproj", "{BC791570-E05E-45D3-9B00-83FBDE31BF2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Models.Dto", "UserService.Models.Dto\UserService.Models.Dto.csproj", "{D0415C58-4F0B-4BF7-92BE-8BE5D57171B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Models.Db", "UserService.Models.Db\UserService.Models.Db.csproj", "{2EC71744-9A1F-4A6D-80F2-4E07AB8B49BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Broker", "UserService.Broker\UserService.Broker.csproj", "{D2A6E715-9924-47BC-9C52-892AED0113CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Business", "UserService.Business\UserService.Business.csproj", "{469C946A-F5BA-4717-B9E1-0BA050548C82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{C630D275-68E8-48D5-BBB1-37F5C8AD6FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C630D275-68E8-48D5-BBB1-37F5C8AD6FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C630D275-68E8-48D5-BBB1-37F5C8AD6FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B0D1442-804D-4C4D-B8F6-C0471DE30247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B0D1442-804D-4C4D-B8F6-C0471DE30247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B0D1442-804D-4C4D-B8F6-C0471DE30247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B0D1442-804D-4C4D-B8F6-C0471DE30247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC791570-E05E-45D3-9B00-83FBDE31BF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC791570-E05E-45D3-9B00-83FBDE31BF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC791570-E05E-45D3-9B00-83FBDE31BF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC791570-E05E-45D3-9B00-83FBDE31BF2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0415C58-4F0B-4BF7-92BE-8BE5D57171B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0415C58-4F0B-4BF7-92BE-8BE5D57171B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0415C58-4F0B-4BF7-92BE-8BE5D57171B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0415C58-4F0B-4BF7-92BE-8BE5D57171B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC71744-9A1F-4A6D-80F2-4E07AB8B49BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC71744-9A1F-4A6D-80F2-4E07AB8B49BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC71744-9A1F-4A6D-80F2-4E07AB8B49BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC71744-9A1F-4A6D-80F2-4E07AB8B49BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2A6E715-9924-47BC-9C52-892AED0113CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A6E715-9924-47BC-9C52-892AED0113CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A6E715-9924-47BC-9C52-892AED0113CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A6E715-9924-47BC-9C52-892AED0113CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{469C946A-F5BA-4717-B9E1-0BA050548C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{469C946A-F5BA-4717-B9E1-0BA050548C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{469C946A-F5BA-4717-B9E1-0BA050548C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{469C946A-F5BA-4717-B9E1-0BA050548C82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
