@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using UserService.Data;
+using UserService.Data.Provider;
 using UserService.Models.Db;
 
 namespace UserService.DataProvider.PostgreSql.Ef;

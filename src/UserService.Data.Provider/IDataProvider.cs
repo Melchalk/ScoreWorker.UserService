@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using UserService.Models.Db;
 
-namespace UserService.Data;
+namespace UserService.Data.Provider;
 
 /// <summary>
 /// Data provider with DbSets of the app.

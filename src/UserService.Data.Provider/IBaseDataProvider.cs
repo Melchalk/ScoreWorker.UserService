@@ -1,4 +1,4 @@
-namespace UserService.Data;
+namespace UserService.Data.Provider;
 
 /// <summary>
 /// Data provider with provider extra methods.
