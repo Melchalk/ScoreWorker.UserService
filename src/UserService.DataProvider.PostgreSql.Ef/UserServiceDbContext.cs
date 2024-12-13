@@ -8,7 +8,7 @@ namespace UserService.DataProvider.PostgreSql.Ef;
 public class UserServiceDbContext(DbContextOptions<UserServiceDbContext> options) : DbContext(options), IDataProvider
 {
     public DbSet<DbUser> Users { get; set; }
-    public DbSet<DbUserAddition> UserAddition { get; set; }
+    public DbSet<DbUserAddition> UserAdditions { get; set; }
     public DbSet<DbUserCredentials> UserCredentials { get; set; }
 
 

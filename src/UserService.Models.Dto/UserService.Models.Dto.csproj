@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Enum\" />
     <Folder Include="Requests\" />
   </ItemGroup>
 
