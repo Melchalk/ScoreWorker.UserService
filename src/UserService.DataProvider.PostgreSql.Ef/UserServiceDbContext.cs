@@ -1,16 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using UserService.Data.Provider;
+using UserService.Data.Provider.Interceptors;
 using UserService.Models.Db;
 
 namespace UserService.DataProvider.PostgreSql.Ef;
 
-public class UserServiceDbContext(DbContextOptions<UserServiceDbContext> options) : DbContext(options), IDataProvider
+public class UserServiceDbContext(DbContextOptions<UserServiceDbContext> options)
+    : DbContext(options), IDataProvider
 {
     public DbSet<DbUser> Users { get; set; }
     public DbSet<DbUserAddition> UserAdditions { get; set; }
     public DbSet<DbUserCredentials> UserCredentials { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.AddInterceptors(new LogQueryInterceptor());
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

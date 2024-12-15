@@ -23,12 +23,16 @@ public class DbUserConfiguration : IEntityTypeConfiguration<DbUser>
 {
     public void Configure(EntityTypeBuilder<DbUser> builder)
     {
-        builder.ToTable(DbUserCredentials.TableName);
+        builder.ToTable(DbUser.TableName);
 
         builder.HasOne(u => u.Addition)
-            .WithOne(ua => ua.User);
+            .WithOne(ua => ua.User)
+            .HasForeignKey<DbUserAddition>(ua => ua.UserId)
+            .HasPrincipalKey<DbUser>(u => u.Id);
 
         builder.HasOne(u => u.Credentials)
-            .WithOne(uc => uc.User);
+            .WithOne(uc => uc.User)
+            .HasForeignKey<DbUserCredentials>(uc => uc.UserId)
+            .HasPrincipalKey<DbUser>(u => u.Id);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UserService.Models.Db;
 
@@ -10,6 +11,8 @@ public class DbUserCredentials
 
     [Key]
     public Guid Id { get; set; }
+
+    [ForeignKey("FK_UserId")]
     public Guid UserId { get; set; }
     public required string Login { get; set; }
     public required string PasswordHash { get; set; }
@@ -25,6 +28,8 @@ public class DbUserCredentialsConfiguration : IEntityTypeConfiguration<DbUserCre
         builder.ToTable(DbUserCredentials.TableName);
 
         builder.HasOne(uc => uc.User)
-            .WithOne(u => u.Credentials);
+            .WithOne(u => u.Credentials)
+            .HasForeignKey<DbUserCredentials>(uc => uc.UserId)
+            .HasPrincipalKey<DbUser>(u => u.Id);
     }
 }
