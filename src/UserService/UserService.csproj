@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UserService.Business\UserService.Business.csproj" />
     <ProjectReference Include="..\UserService.Data.Provider\UserService.Data.Provider.csproj" />
     <ProjectReference Include="..\UserService.DataProvider.PostgreSql.Ef\UserService.DataProvider.PostgreSql.Ef.csproj" />
     <ProjectReference Include="..\UserService.Models.Dto\UserService.Models.Dto.csproj" />

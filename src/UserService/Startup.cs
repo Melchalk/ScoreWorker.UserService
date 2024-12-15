@@ -3,6 +3,10 @@ using MassTransit;
 using MassTransit.ExtensionsDependencyInjectionIntegration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using UserService.Business.Credentials;
+using UserService.Business.Credentials.Interfaces;
+using UserService.Business.User;
+using UserService.Business.User.Interfaces;
 using UserService.Data;
 using UserService.Data.Interfaces;
 using UserService.Data.Provider;
@@ -107,6 +111,15 @@ internal class Startup(IConfiguration configuration)
         services.AddScoped<DbContext, UserServiceDbContext>();
 
         services.AddScoped<IUserRepository, UserRepository>();
+
+        services.AddScoped<ICreateUserCommand, CreateUserCommand>();
+        services.AddScoped<IDeleteUserCommand, DeleteUserCommand>();
+        services.AddScoped<IGetUsersByTeamCommand, GetUsersByTeamCommand>();
+        services.AddScoped<IGetUserCommand, GetUserCommand>();
+        services.AddScoped<IGetCurrentUserCommand, GetCurrentUserCommand>();
+        services.AddScoped<IUpdateUserCommand, UpdateUserCommand>();
+
+        services.AddScoped<ICreateCredentialsCommand, CreateCredentialsCommand>();
     }
 
     private void UpdateDatabase(IApplicationBuilder app)
