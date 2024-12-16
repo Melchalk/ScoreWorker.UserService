@@ -4,8 +4,8 @@ namespace UserService.Data.Interfaces;
 
 public interface IUserRepository
 {
-    Task<DbUser> GetAsync(Guid id);
-    Task CreateAsync(DbUser dbUser);
-    Task UpdateAsync(DbUser dbUser);
-    Task DeleteAsync(Guid id);
+    Task<DbUser> GetAsync(Guid id, CancellationToken cancellationToken);
+    Task CreateAsync(DbUser dbUser, CancellationToken cancellationToken);
+    Task<bool> UpdateAsync(DbUser dbUser, CancellationToken cancellationToken);
+    Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken);
 }
