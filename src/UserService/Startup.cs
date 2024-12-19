@@ -114,7 +114,7 @@ internal class Startup(IConfiguration configuration)
 
         services.AddScoped<ICreateUserCommand, CreateUserCommand>();
         services.AddScoped<IDeleteUserCommand, DeleteUserCommand>();
-        services.AddScoped<IGetUsersByTeamCommand, GetUsersByTeamCommand>();
+        services.AddScoped<IGetUserIdsByTeamCommand, GetUserIdsByTeamCommand>();
         services.AddScoped<IGetUserCommand, GetUserCommand>();
         services.AddScoped<IGetCurrentUserCommand, GetCurrentUserCommand>();
         services.AddScoped<IUpdateUserCommand, UpdateUserCommand>();

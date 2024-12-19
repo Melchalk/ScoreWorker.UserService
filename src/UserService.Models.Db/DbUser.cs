@@ -15,6 +15,7 @@ public class DbUser
     public bool IsAdmin { get; set; }
     public bool IsActive { get; set; }
 
+    public DbUserWorker? Worker { get; set; }
     public DbUserAddition? Addition { get; set; }
     public DbUserCredentials? Credentials { get; set; }
 }
@@ -28,6 +29,11 @@ public class DbUserConfiguration : IEntityTypeConfiguration<DbUser>
         builder.HasOne(u => u.Addition)
             .WithOne(ua => ua.User)
             .HasForeignKey<DbUserAddition>(ua => ua.UserId)
+            .HasPrincipalKey<DbUser>(u => u.Id);
+
+        builder.HasOne(u => u.Worker)
+            .WithOne(w => w.User)
+            .HasForeignKey<DbUserWorker>(w => w.UserId)
             .HasPrincipalKey<DbUser>(u => u.Id);
 
         builder.HasOne(u => u.Credentials)

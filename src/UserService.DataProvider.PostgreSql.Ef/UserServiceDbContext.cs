@@ -10,6 +10,7 @@ public class UserServiceDbContext(DbContextOptions<UserServiceDbContext> options
     : DbContext(options), IDataProvider
 {
     public DbSet<DbUser> Users { get; set; }
+    public DbSet<DbUserWorker> UserWorkers { get; set; }
     public DbSet<DbUserAddition> UserAdditions { get; set; }
     public DbSet<DbUserCredentials> UserCredentials { get; set; }
 

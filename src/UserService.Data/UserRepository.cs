@@ -7,12 +7,14 @@ namespace UserService.Data;
 
 public class UserRepository(IDataProvider provider) : IUserRepository
 {
-    public async Task CreateAsync(
+    public async Task<Guid> CreateAsync(
         DbUser dbUser, CancellationToken cancellationToken)
     {
         await provider.Users.AddAsync(dbUser, cancellationToken);
 
         await provider.SaveAsync(cancellationToken);
+
+        return dbUser.Id;
     }
 
     public async Task<bool> DeleteAsync(
@@ -37,6 +39,16 @@ public class UserRepository(IDataProvider provider) : IUserRepository
         return await provider.Users
             .AsNoTracking()
             .FirstOrDefaultAsync(r => r.Id == id, cancellationToken);
+    }
+
+    public async Task<List<DbUser>> GetUserIdsByTeamAsync(
+        Guid teamId, CancellationToken cancellationToken)
+    {
+        return await provider.Users
+            .AsNoTracking()
+            .Include(u => u.Worker)
+            .Where(u => u.Worker != null && u.Worker.TeamId == teamId)
+            .ToListAsync(cancellationToken);
     }
 
     public async Task<bool> UpdateAsync(

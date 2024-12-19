@@ -5,5 +5,5 @@ namespace UserService.Business.User.Interfaces;
 
 public interface ICreateUserCommand
 {
-    Task<ResponseInfo<bool>> ExecuteAsync(CreateUserRequest request, CancellationToken cancellationToken);
+    Task<ResponseInfo<Guid>> ExecuteAsync(CreateUserRequest request, CancellationToken cancellationToken);
 }

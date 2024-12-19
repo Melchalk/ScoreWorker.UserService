@@ -15,7 +15,7 @@ namespace UserService.Controllers;
 public class CredentialsController : ControllerBase
 {
     [HttpPost("create")]
-    public async Task<ResponseInfo<bool>> CreateAsync(
+    public async Task<ResponseInfo<Guid>> CreateAsync(
       [FromServices] ICreateCredentialsCommand command,
       [FromBody] CreateCredentialsRequest request,
       CancellationToken cancellationToken)

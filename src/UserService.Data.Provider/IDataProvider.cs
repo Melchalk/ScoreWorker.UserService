@@ -9,6 +9,7 @@ namespace UserService.Data.Provider;
 public interface IDataProvider : IBaseDataProvider
 {
     DbSet<DbUser> Users { get; set; }
+    DbSet<DbUserWorker> UserWorkers { get; set; }
     DbSet<DbUserAddition> UserAdditions { get; set; }
     DbSet<DbUserCredentials> UserCredentials { get; set; }
 }

@@ -6,7 +6,7 @@ namespace UserService.Business.Credentials;
 
 public class CreateCredentialsCommand : ICreateCredentialsCommand
 {
-    public Task<ResponseInfo<bool>> ExecuteAsync(
+    public Task<ResponseInfo<Guid>> ExecuteAsync(
         CreateCredentialsRequest request,
         CancellationToken cancellationToken)
     {

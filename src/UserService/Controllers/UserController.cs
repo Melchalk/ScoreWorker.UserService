@@ -15,7 +15,7 @@ namespace UserService.Controllers;
 public class UserController : ControllerBase
 {
     [HttpPost("create")]
-    public async Task<ResponseInfo<bool>> CreateAsync(
+    public async Task<ResponseInfo<Guid>> CreateAsync(
       [FromServices] ICreateUserCommand command,
       [FromBody] CreateUserRequest request,
       CancellationToken cancellationToken)

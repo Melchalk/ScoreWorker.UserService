@@ -7,7 +7,7 @@ namespace UserService.Business.User;
 
 public class CreateUserCommand(IUserRepository repository) : ICreateUserCommand
 {
-    public Task<ResponseInfo<bool>> ExecuteAsync(
+    public Task<ResponseInfo<Guid>> ExecuteAsync(
         CreateUserRequest request,
         CancellationToken cancellationToken)
     {
